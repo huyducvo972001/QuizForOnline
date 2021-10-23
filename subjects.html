@@ -1,0 +1,113 @@
+<img src="images/bgExam.svg" alt="" width="100%">
+<div class="container mt-5" ng-controller="subjectCtrl">
+    <div>       
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"                            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="wrapper">
+                            <div class="search-input">
+                                <a href="" target="_blank" hidden></a>
+                                <div class="input-group">
+                                <input type="text" id="search_suggest" class="form-control" autocomplete="off"
+                                    placeholder="Type to search.."> 
+                                    <button class="btn btn-outline-secondary" ng-click="searchFinish()"
+                                    data-dismiss="modal">Tìm kiếm</button>
+                                </div>
+                                <div class="autocom-box">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="row">
+        <article class="col-sm-9 mb-4" style="margin-top: -100px;">
+            <div class="subject">
+                <div class="row">
+                    <div class="gridSubject col-6 mb-4" ng-repeat="sj in listSubject |limitTo: 4:start">
+                        <div class="slide-inSubject fourSubject">
+                            <div class="boxSubject">
+                                <div>
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            <img src="images/logos/{{sj.Logo}}" alt="">
+                                        </div>
+                                        <div class="card-footer bg-white">
+                                            <a href="">{{sj.Name}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlaySubject">
+                                    <div class="row">
+                                        <div class="col-4 text-center mt-5">
+                                            <img src="images/answerLogo.png" alt="" width="100%">
+                                        </div>
+                                        <div class="col mt-5 mr-2">
+                                            <span
+                                                style="font-size: 32px; font-family: 'Yanone Kaffeesatz', sans-serif; color: rgb(126, 32, 32);">{{sj.Name}}</span>
+                                            <div>
+                                                <hr style="border-top: 3px solid red; width: 150px;">
+                                                <span
+                                                    style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><i
+                                                        class="far fa-question-circle"></i> 10 câu | <i
+                                                        class="far fa-clock"></i> 10 phút</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#!/bai-trac-nghiem/{{sj.Id}}">
+                                        <button class="btn btn-default font-weight-bold mt-3"
+                                            style="font-size: 18px; color: rgb(82, 69, 66);"><i
+                                                class="fas fa-sign-in-alt"></i> Làm bài</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group text-center mt-1">
+
+                    <button ng-click="prev()" class="btn btn-danger mr-5" style="font-size: 18px; width: 100px; "><i
+                            class="fas fa-step-backward"></i></button>
+                    <button ng-click="back()" class="btn btn-danger mr-5" style="font-size: 18px; width: 100px;"><i
+                            class="fas fa-backward"></i></button>
+                    <button ng-click="saveResult()" class="btn btn-danger mr-5" style="font-size: 18px;"
+                        ng-if="dataHistory.length>0"><i class="fas fa-save"></i> Lưu kết quả</button>
+                    <button ng-click="next()" class="btn btn-danger mr-5" style="font-size: 18px; width: 100px;"><i
+                            class="fas fa-forward"></i></button>
+                    <button ng-click="last()" class="btn btn-danger" style="font-size: 18px; width: 100px;"><i
+                            class="fas fa-step-forward"></i></button>
+
+                </div>
+            </div>
+        </article>
+        <aside class="col-sm-3">
+            <div class="card">
+                <div class="card-header bg-dark" id="headingOne">
+                    <span style="font-weight: bold; font-size: 16px; color: white; cursor: pointer;"
+                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne"><i class="fas fa-list-ul"></i>&ensp;DANH
+                        MỤC MÔN HỌC</span>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush menuAside">
+                            <li class="list-group-item list-group-item-action"
+                                ng-repeat="sj in listSubject |limitTo: fill:0"><a
+                                    href="#!/bai-trac-nghiem/{{sj.Id}}">{{sj.Name}}</a></li>
+
+                        </ul>
+                        <li class="list-group-item list-group-item-action" ng-click="full()"><a
+                                href="">{{show_hiden}}</a></li>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+</div>

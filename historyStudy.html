@@ -1,0 +1,74 @@
+<div class="mb-5" ng-controller="historyStudy">
+    <div style="background: linear-gradient(90deg, #3A3897 0%, #A3A1FF 100%); height: 340px;" class="text-center">
+        <img src="images/{{img}}" alt="" width="10%" style="border-radius: 50%;" class="mt-4">
+        <p
+            style="font-size: 32px; color: white; margin-top: 5px; font-weight: bold; font-family: 'Recursive', sans-serif;">
+            {{fullname}}</p>
+
+    </div>
+    <div class="historyBanner container">
+        <div class="row">
+            <div class="col align-middle text-center mt-4">
+                <span style="font-size: 28px;  font-family: 'Georama', sans-serif; color: rgb(110, 95, 95);">Điểm cao nhất:</span>
+                <p style="font-size: 60px; font-weight: bold; font-family: 'Recursive', sans-serif;" class="text-danger"><i class="fas fa-trophy"></i> {{maxTotal < 10 ? "0"+maxTotal:maxTotal}}</p>
+            </div>            
+            <div class="col align-middle text-center mt-4" style="border-left: 3px solid rgb(139, 115, 115);">
+                <span style="font-size: 28px;  font-family: 'Georama', sans-serif; color: rgb(110, 95, 95);">Điểm thấp nhất:</span>
+                <p style="font-size: 60px; font-weight: bold; font-family: 'Recursive', sans-serif; color: rgb(78, 128, 97);"><i class="fas fa-diagnoses"></i> {{minTotal < 10 ? "0"+minTotal:minTotal}}</p>
+            </div>
+            <div class="col align-middle text-center mt-4" style="border-left: 3px solid rgb(139, 115, 115);">
+                <span style="font-size: 28px;  font-family: 'Georama', sans-serif; color: rgb(110, 95, 95);">Tổng số bài đã làm:</span>
+                <p style="font-size: 60px; font-weight: bold; font-family: 'Recursive', sans-serif; color: rgb(16, 13, 192);"><i class="fas fa-clipboard-list"></i> {{totalFinish < 10 ? "0"+totalFinish : totalFinish}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="ml-3 mt-5">Kết quả học tập</h2>
+        <table class="table table-borderless mt-3">
+            <tbody>
+                <tr ng-repeat=" h in dataStudents| orderBy:'-mark'">
+                    <th scope="row"
+                        style="font-size: 50px; font-family: 'Titillium Web', sans-serif; color: rgb(122, 103, 103);">
+                        {{($index+1) < 10 ? "0" +($index+1):($index+1)}}</th>
+                    <td class="align-middle">
+                        <span
+                            style="font-weight: bold; font-size: 18px; font-family: 'Georama', sans-serif;">{{h.examName}}</span>
+                        <br>
+                        <span style="font-size: 12px;color:rgb(122, 103, 103);"">{{h.date}}</span>
+            </td>
+            <td class=" align-middle" style="color:rgb(122, 103, 103);"">Số câu đúng: {{h.mark}}/10</td>
+          
+            <td class=" align-middle" style="color:rgb(122, 103, 103);"">Thời gian còn lại: {{h.time}}</td>
+            <td class=" align-middle text-right">
+                            <span class="badge badge-primary" style="font-size: 14px;">
+                                Điểm
+                                <p style="font-size: 32px; margin-bottom: 0; width: 80px;">{{h.mark}}</p>
+                            </span>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<section class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="row">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="images/it-removebg.png" width="100%" alt="Moon">
+                </div>
+                <div class="col-sm-8 start-text text-center m-auto">
+                    <h1>100.000 người khác đã học. Còn bạn?</h1>
+                    <p>"Đừng học lập trình. Nghiện đấy!"</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

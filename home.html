@@ -1,0 +1,178 @@
+<!-- carousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner carousel_home">
+        <div class="carousel-item active">
+            <img src="images/banner1.jpg" class="w-100" alt="">
+            <div class="carousel-caption text-left">
+                <h1 style="font-size: 50px; font-weight: bold;">Học lập trình giúp bạn tiết kiệm thời gian để thành công
+                    sớm</h1>
+                <p style="font-size: 18px;">Học lập trình giúp bạn cân đối thời gian và làm việc trở nên hiệu quả hơn
+                    nhiều.</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/banner2.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption text-left">
+                <h1 style="font-size: 50px; font-weight: bold;">Lập trình giúp chúng ta sáng tạo hơn, giải quyết vấn đề
+                    tốt hơn!</h1>
+                <p style="font-size: 18px;">Khi trở thành lập trình viên bạn sẽ sáng tạo hơn, bởi từ quá trình tiếp nhận
+                    yêu cầu đến việc thực hiện code, chúng ta phải lên kế hoạch, phác thảo ý tưởng code, sản phẩm...
+                </p>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/banner3.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption text-left">
+                <h1 style="font-size: 50px; font-weight: bold;">Học lập trình giúp cho thu nhập ổn định và cao hơn!</h1>
+                <p style="font-size: 18px;">Nhu cầu tuyển dụng rất lớn nhưng thiếu nhân sự trầm trọng, điều đó khiến cho
+                    việc tìm việc làm cũng dễ dàng hơn các ngành khác.</p>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <div ng-controller='myCtrl'>
+        <a class="carousel-control-prev" data-target="#carouselExampleCaptions" data-slide-to="0--">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" data-target="#carouselExampleCaptions" ng-click="next()" data-slide-to="{{st}}">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!-- content -->
+<div class="container">
+    <div class="row intro">
+        <div class="col text-center">
+            <i class="fas fa-user-graduate"></i>
+            <p><span>100.000</span> người đã tham gia</p>
+        </div>
+        <div class="col text-center">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <p><span>6</span> môn học dành cho bạn</p>
+        </div>
+        <div class="col text-center">
+            <i class="fas fa-chalkboard"></i>
+            <p>Học mọi lúc, mọi nơi</p>
+        </div>
+
+    </div>
+
+    <div class="subject">
+        <h2 class="font-weight-bold text-center">Chúng tôi có</h2>
+        <div class="mt-5">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2"></div>
+                <div class="col-2 text-center"><img src="images/repeatImage.png" width="100%" alt=""></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="images/java.png" width="100%" alt=""> 
+                        </div>
+                        <div class="col">
+                            <span style="color: rgb(80, 80, 77);">Khi nhắc đến Java người ta không còn chỉ nhắc đến
+                                Java như là một ngôn ngữ mà nhắc đến Java như là một công nghệ hay một nền tảng phát triển</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">                
+                <div class="col-5">
+                    <div class="row">                        
+                        <div class="col text-right">
+                            <span style="color: rgb(80, 80, 77);">HTML5 có thêm nhiều tính năng cú pháp mới.
+                                 Những tính năng này làm cho nó dễ dàng bao quát, xử lý đa phương tiện và nội dung đồ họa trên web.</span>
+                        </div>
+                        <div class="col-3">
+                            <img src="images/html5.png" width="100%" alt=""> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 text-center"><img src="images/repeatImage.png" width="100%" alt=""></div>
+                <div class="col-2"></div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row ">
+                <div class="col-3"></div>
+                <div class="col-2"></div>
+                <div class="col-2 text-center"><img src="images/repeatImage.png" width="100%" alt=""></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="images/css3.png" width="100%" alt=""> 
+                        </div>
+                        <div class="col">
+                            <span style="color: rgb(80, 80, 77);">CSS3 là phiên bản thứ 3 và cũng là mới nhất của CSS, 
+                                CSS3 được bổ sung thêm nhiều tính năng mới tiện lợi hơn CSS cho người dùng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">                
+                <div class="col-5">
+                    <div class="row">                        
+                        <div class="col text-right">
+                            <span style="color: rgb(80, 80, 77);">Android là một hệ điều hành dựa trên nền tảng Linux 
+                                được thiết kế dành cho các thiết bị di động có màn hình cảm ứng như điện thoại thông minh và máy tính bảng.</span>
+                        </div>
+                        <div class="col-3">
+                            <img src="images/android.png" width="100%" alt=""> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 text-center"><img src="images/repeatImage.png" width="100%" alt=""></div>
+                <div class="col-2"></div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2"></div>
+                <div class="col-2 text-center"><img src="images/repeatImage.png" width="100%" alt=""></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-3">
+                            <img src="images/DBAV-removebg-preview.png" width="100%" alt=""> 
+                        </div>
+                        <div class="col">
+                            <span style="color: rgb(80, 80, 77);">Microsoft SQL Server là một hệ quản trị cơ sở dữ liệu quan hệ. Là một máy chủ cơ sở dữ liệu có chức năng chính là lưu trữ và truy xuất dữ liệu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+        <button class="btn btn-secondary mt-5 mx-auto d-block" style="border-radius: 0 !important; width: 200px;" onclick="location.href='#!/mon-hoc'">Xem
+            môn học...</button>
+    </div>
+</div>
+<section class="stars-container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="row">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="images/it-removebg.png" width="100%" alt="Moon">
+                </div>
+                <div class="col-sm-8 start-text text-center m-auto">
+                    <h1>100.000 người khác đã học. Còn bạn?</h1>
+                    <p>"Đừng học lập trình. Nghiện đấy!"</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Autocomplete Search Box | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Type to search..">
+        <div class="autocom-box">
+          <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+      </div>
+    </div>
+
+     <script src="js/suggestions.js"></script> 
+     <script src="js/script.js"></script> 
+
+  </body>
+</html>
+<script>
+    let suggestions = [
+    "Channel",
+    "CodingLab",
+    "CodingNepal",
+    "YouTube",
+    "YouTuber",
+    "YouTube Channel",
+    "Blogger",
+    "Bollywood",
+    "Vlogger",
+    "Vechiles",
+    "Facebook",
+    "Freelancer",
+    "Facebook Page",
+    "Designer",
+    "Developer",
+    "Web Designer",
+    "Web Developer",
+    "Login Form in HTML & CSS",
+    "How to learn HTML & CSS",
+    "How to learn JavaScript",
+    "How to became Freelancer",
+    "How to became Web Designer",
+    "How to start Gaming Channel",
+    "How to start YouTube Channel",
+    "What does HTML stands for?",
+    "What does CSS stands for?",
+];
+</script>
+<script>
+    // getting all required elements
+const searchWrapper = document.querySelector(".search-input");
+const inputBox = searchWrapper.querySelector("input");
+const suggBox = searchWrapper.querySelector(".autocom-box");
+const icon = searchWrapper.querySelector(".icon");
+let linkTag = searchWrapper.querySelector("a");
+let webLink;
+
+// if user press any key and release
+inputBox.onkeyup = (e)=>{
+    let userData = e.target.value; //user enetered data
+    let emptyArray = [];
+    if(userData){
+        icon.onclick = ()=>{
+            webLink = `https://www.google.com/search?q=${userData}`;
+            linkTag.setAttribute("href", webLink);
+            linkTag.click();
+        }
+        emptyArray = suggestions.filter((data)=>{
+                    
+            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        });
+        emptyArray = emptyArray.map((data)=>{
+            // passing return data inside li tag
+            return data = `<li>${data}</li>`;
+        });
+        searchWrapper.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+        let allList = suggBox.querySelectorAll("li");
+        for (let i = 0; i < allList.length; i++) {
+            //adding onclick attribute in all li tag
+            allList[i].setAttribute("onclick", "select(this)");
+        }
+    }else{
+        searchWrapper.classList.remove("active"); //hide autocomplete box
+    }
+}
+
+function select(element){
+    let selectData = element.textContent;
+    inputBox.value = selectData;
+    icon.onclick = ()=>{
+        webLink = `https://www.google.com/search?q=${selectData}`;
+        linkTag.setAttribute("href", webLink);
+        linkTag.click();
+    }
+    searchWrapper.classList.remove("active");
+}
+
+function showSuggestions(list){
+    let listData;
+    if(!list.length){
+        userValue = inputBox.value;
+        listData = `<li>${userValue}</li>`;
+    }else{
+      listData = list.join('');
+    }
+    
+    suggBox.innerHTML = listData;
+}
+
+</script>

@@ -1,0 +1,101 @@
+{
+  "courses": [
+    {
+      "username": "teonv123",
+      "password": "1234",
+      "fullname": "Nguyễn Văn Tèo",
+      "email": "teonv@fpt.edu.vn",
+      "gender": "true",
+      "birthday": "2021-07-23",
+      "schoolfee": 1000000,
+      "mark": 10,
+      "img": "myAvatar.jpg",
+      "id": 6
+    },
+    {
+      "username": "voduchuy",
+      "password": "12345",
+      "fullname": "Võ Đức Huy",
+      "email": "huyducvo972001@gmail.com",
+      "gender": "true",
+      "birthday": "2021-08-17T17:00:00.000Z",
+      "schoolfee": 100000000,
+      "mark": 10,
+      "id": 7
+    }
+  ],
+  "historyExam": [
+    {
+      "username": "teonv123",
+      "mark": 10,
+      "examName": "Lập trình android cơ bản",
+      "time": "9:58",
+      "date": "09/08/2021 10:38:10",
+      "id": 1
+    },
+    {
+      "username": "teonv123",
+      "mark": 2,
+      "examName": "Cơ sở dữ liệu",
+      "time": "9:41",
+      "date": "09/08/2021 10:41:56",
+      "id": 2
+    },
+    {
+      "username": "teonv123",
+      "mark": 3,
+      "examName": "Thiết kế giao diện trên Android",
+      "time": "9:40",
+      "date": "09/08/2021 10:40:48",
+      "id": 3
+    },
+    {
+      "username": "teonv123",
+      "mark": 1,
+      "examName": "Xây dựng trang web",
+      "time": "9:41",
+      "date": "09/08/2021 10:41:28",
+      "id": 4
+    },
+    {
+      "username": "teonv123",
+      "mark": 4,
+      "examName": "Lập trình PHP",
+      "time": "9:41",
+      "date": "09/08/2021 15:47:20",
+      "id": 5
+    },
+    {
+      "username": "teonv123",
+      "mark": 4,
+      "examName": "Lập trình game 2D",
+      "time": "9:29",
+      "date": "10/08/2021 13:04:01",
+      "id": 6
+    },
+    {
+      "username": "teonv123",
+      "mark": 0,
+      "examName": "Thiết kế giao diện trên Android",
+      "time": "9:59",
+      "date": "10/08/2021 13:07:25",
+      "id": 7
+    },
+    {
+      "username": "teonv123",
+      "mark": 4,
+      "examName": "Lập trình Android cơ bản",
+      "time": "9:41",
+      "date": "10/08/2021 15:48:01",
+      "id": 8
+    },
+    {
+      "username": "teonv123",
+      "mark": 1,
+      "examName": "Thiết kế giao diện trên Android",
+      "time": "9:38",
+      "date": "10/08/2021 15:53:17",
+      "id": 9
+    }
+  ]
+}

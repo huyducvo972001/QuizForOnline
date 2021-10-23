@@ -1,0 +1,95 @@
+<div style="margin: auto; width: 1200px;" ng-controller="loginCtrl">
+    <input type="text" ng-model='idUser' hidden>
+    <div class="row">
+        <div class="col-lg-2 mt-5 account">
+            <div class="row mt-3">
+                <div class="col-3"><img src="images/{{img}}" alt="" style="width: 60px; border-radius: 50%;">
+                </div>
+                <div class="col-9 mt-2" style="padding-left: 40px !important;">
+                    <div><span class="font-weight-bold">{{username}}</span>
+                        <input type="text" ng-model="username" name="usernameUpd" hidden>
+                        <input type="text" ng-model="password" name="passwordUpd" hidden>
+                        <p style="color: gray;"><i class="fas fa-pen"></i> Sửa hồ sơ</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="menuAccount mt-3">
+                <p><i class="fas fa-user-edit"></i>&ensp;<a href="#!/cap-nhat-tai-khoan">Cập nhật tài khoản</a></p>
+                <p><i class="fas fa-key"></i>&ensp; <a href="#!/doi-mat-khau">Đổi mật khẩu</a></p>
+                <p><i class="fas fa-sign-out-alt"></i>&ensp; <a href="" ng-click='logout()'>Đăng xuất</a></p>
+            </div>
+        </div>
+        <div class="accountManager col-lg-10">
+            <div class="mt-5 bg-white pb-5 mb-5" style="border-radius: 5px; box-shadow: 1px 1px 5px gray;">
+                <div class="titleAcc pl-5">
+                    <h5 class="font-weight-bold pt-4" style="color: rgb(126, 69, 69);">TÀI KHOẢN CỦA TÔI</h5>
+                    <p>Quản lý thông tin để bảo mật tài khoản của bạn tốt hơn</p>                    
+                </div>
+                <hr style="width: 90%;">
+                <table style="width: 100%;">
+                    
+                    <tr>
+                        <td class="titleAccount text-right">Tên đăng nhập</td>
+                        <td class="inforAcc pl-4 pr-5">{{username}}</td>
+                        <input type="text" hidden>
+                        <td class="avatarAcc text-center" rowspan="6">
+                            <img src="images/{{img}}" alt="" id="imgBefore" style="width: 150px; border-radius: 50%;">
+                            <img id="output" style="width: 150px; border-radius: 50%;" />
+                            <br>
+                            <input type="file" hidden id="anhDaiDoen" onChange='loadFile(event)'>     
+    
+                            <label class="selectAvatar" for="anhDaiDoen">Chọn ảnh</label>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Họ và tên</td>
+                        <td class="pl-4 pr-5 pt-5"><input type="text" class="form-control" ng-model="fullname" name="fullnameUpd"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Email</td>
+                        <td class="pl-4 pr-5 pt-5"><input type="email" class="form-control" ng-model="email" name="emailUpd"
+                                ></td>
+                    </tr>
+                    <!-- <input type="text" ng-model='st.password' hidden> -->
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Học phí</td>
+                        <td class="pl-4 pr-5 pt-5"><input type="number" class="form-control" ng-model="fee" name="schoolfeeUpd"></td>
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Giới tính</td>
+                        <td class="pl-4 pr-5 pt-5">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genderUpd" ng-model ="gender"
+                                       value="true"  > 
+                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genderUpd" ng-model ="gender"
+                                    value="false" >
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>                               
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Ngày sinh</td>
+                        <td class="pl-4 pr-5 pt-5"><input type="date" class="form-control" name="birthdayUpd" ng-model="birthday" value="{{birthday |date:'yyyy-MM-dd'}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5">Điểm</td>
+                        <td class="pl-4 pr-5 pt-5"><input type="text" class="form-control" name="markUpd" ng-model="mark"></td>
+                    </tr>
+                    <tr>
+                        <td class="titleAccount text-right pt-5"></td>
+                        <td class="pl-4 pr-5 pt-5"> <button class="btn btn-success" ng-click="update()"
+                                style="width: 100px; border-radius: 0;">LƯU</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

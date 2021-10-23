@@ -1,0 +1,26 @@
+<div class="login" style="background-image: url('images/loginBackgrounf.jpg'); background-size: cover;">
+    <div class="container pt-5 pb-5" ng-controller="loginCtrl">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-5 bg-white mr-5" style="border-radius: 5px; box-shadow: 2px 2px 5px grey;">
+                <form class="pt-5 pb-5 pr-4 pl-4">
+                    <h4 class="text-center font-weight-bold" >Đăng nhập</h4>
+                    <div class="form-group mt-5">
+                        <input type="text" class="form-control" ng-model="username" placeholder="Tên đăng nhập">
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="password" class="form-control" ng-model="password" placeholder="Mật khẩu">
+                    </div>
+                    <button type="submit" class="btn btn-danger mt-4 w-100" ng-click="login()">ĐĂNG NHẬP</button>
+                    <div class="mt-2">
+                        <a href="#!/quen-mat-khau" style="text-decoration: none; font-size: 14px;">Quên mật khẩu</a>
+                    </div>
+                    <div style="margin-top: 100px; text-align: center; font-size: 14px;">Bạn chưa có tài khoản ? <a
+                            href="" style="text-decoration: none; font-style: italic;">Tạo tài khoản ?</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="login" style="background-image: url('images/loginBackgrounf.jpg'); background-size: cover;" ng-controller="createAccountCtrl">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-5 bg-white mr-5" style="border-radius: 5px; box-shadow: 2px 2px 5px grey;">
+                <form class="pt-5 pb-5 pr-4 pl-4" name="frmDangKy">
+                    <h4 class="text-center font-weight-bold">Đăng ký</h4>
+                    <div class="form-group mt-5">
+                        <input type="text" class="form-control" ng-model="username" placeholder="Tên đăng nhập" name="tenDN" required ng-minlength="3" ng-maxlength="20" ng-pattern="/^[a-zA-Z0-9-]*$/">
+                        <div ng-show="frmDangKy.tenDN.$invalid" class="font-italic text-danger">
+                            &ensp;Nhập từ 3 đến 20 ký tự và không có ký tự đặc biệt
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="password" class="form-control" ng-model="password" placeholder="Mật khẩu" name="matKhau" required ng-minlength="4" ng-pattern="/^[a-zA-Z0-9-]*$/">
+                        <div ng-show="frmDangKy.matKhau.$invalid" class="font-italic text-danger">
+                            &ensp;Nhập trên 4 ký tự và không có ký tự đặc biệt
+                        </div>
+                    </div>                    
+                    <div class="form-group mt-4">
+                        <input type="text" class="form-control" ng-model="fullname" placeholder="Họ và tên" name="hoTen" required ng-minlength="4">
+                        <div ng-show="frmDangKy.hoTen.$invalid" class="font-italic text-danger">
+                            &ensp;Nhập trên 4 ký tự 
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="email" class="form-control" ng-model="email" placeholder="Địa chỉ email" required name="email">
+                        <div ng-show="frmDangKy.email.$invalid" class="font-italic text-danger">
+                            &ensp;Nhập địa chỉ email
+                        </div>
+                    </div>                   
+                    <div class="form-group mt-4">
+                        <select class="form-control" ng-model="gender" required name="gioiTinh">
+                            <option value="" disabled selected hidden>Giới tính</option>                            
+                            <option value="true">Nam</option>
+                            <option value="false">Nữ</option>
+                        </select>
+                        <div ng-show="frmDangKy.gioiTinh.$invalid" class="font-italic text-danger">
+                            &ensp;Chọn giới tính
+                        </div>
+                    </div>                   
+                    <div class="form-group mt-4">
+                        <input type="date" class="form-control" ng-model="birthday" required name="ngaySinh">
+                        <div ng-show="frmDangKy.ngaySinh.$invalid" class="font-italic text-danger">
+                            &ensp;Chọn ngày sinh
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="number" class="form-control" placeholder="Học phí" ng-model="schoolfee" min="1000000" required name="hocPhi">
+                        <div ng-show="frmDangKy.hocPhi.$invalid" class="font-italic text-danger">
+                            &ensp;Học phí từ 1.000.000 trở lên
+                        </div>
+                    </div>
+                    <div class="form-group mt-4">
+                        <input type="number" class="form-control" placeholder="Điểm" ng-model="mark" name="diem" required min="0" max="10">
+                        <div ng-show="frmDangKy.diem.$invalid" class="font-italic text-danger">
+                            &ensp;Điểm từ 0 đến 10
+                        </div>
+                    </div>
+                    <button  ng-disabled="frmDangKy.$invalid" class="btn btn-danger mt-4 w-100" id="create" ng-click="postdata()">ĐĂNG KÝ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
